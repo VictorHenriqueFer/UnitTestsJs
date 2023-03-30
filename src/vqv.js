@@ -19,12 +19,13 @@
 */
 
 const vqv = (name, number) => {
-  if (typeof name !== 'string' || typeof number === 'number') {
+  if (typeof name !== 'string' || typeof number !== 'number') {
     return undefined;
   }
-    return `Oi, meu nome é ${name}! Tenho ${number} anos, 
-    trabalho na Trybe e mando muito em programação!
-    #VQV!`;
+    return `Oi, meu nome é ${name}!
+Tenho ${number} anos,
+trabalho na Trybe e mando muito em programação!
+#VQV!`;
   };
 
 module.exports = vqv;
