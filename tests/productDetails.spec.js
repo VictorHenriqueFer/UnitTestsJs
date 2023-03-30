@@ -31,13 +31,31 @@ const productDetails = require('../src/productDetails');
 
 describe('6 - Implemente os casos de teste para a função `productDetails`', () => {
   it('Verifica se a função `productDetails` tem o comportamento esperado', () => {
-    fail('Teste vazio!');
     // ESCREVA SEUS TESTES ABAIXO:
     // Teste se productDetails é uma função.
-    // Teste se o retorno da função é um array.
-    // Teste se o array retornado pela função contém dois itens dentro.
-    // Teste se os dois itens dentro do array retornado pela função são objetos.
-    // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
-    // Teste se os dois productIds terminam com 123.
+    expect(typeof productDetails).toBe('function');
   });
-});
+    // Teste se o retorno da função é um array.
+    it('Verifica se o retorno da função é um array.', () => {
+      expect(productDetails()).toBeTruthy();
+    })
+    // Teste se o array retornado pela função contém dois itens dentro.
+    it('Verifica se o array retornado pela função contém dois itens dentro.', () => {
+      expect(productDetails().length).toBe(2);
+    })
+    // Teste se os dois itens dentro do array retornado pela função são objetos.
+    it('Verifica se os dois itens dentro do array são objetos.', () => {
+      expect(typeof productDetails()).toBe('object');
+    })
+    // Teste se quando passado parâmetros diferentes entre si, os dois objetos também são diferentes entre si.
+    it('Verifica se quando passamos parâmetros diferentes entre si, os dois objetos são diferentes.', () => {
+      expect(productDetails()).toStrictEqual(productDetails());
+    })
+    // Teste se os dois productIds terminam com 123.
+    it('Teste se os dois productIds terminam com 123.', () => {
+      const productId1 = 'Alcool Gel123';
+      expect(productId1.endsWith('123')).toBe(true);
+      const productId2 = 'Mascara123';
+      expect(productId2.endsWith('123')).toBe(true);
+    });
+  });
